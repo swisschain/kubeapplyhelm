@@ -16,6 +16,8 @@ Configmap=$(find . -name "configmap.helm")
 
 for configmap in $Configmap
 do
+    echo helm apply $configmap
+    cat $configmap
     helm upgrade -f $configmap
 done
 
