@@ -18,7 +18,7 @@ for configmap in $Configmap
 do
     echo helm apply $configmap
     cat $configmap
-    helm install -f $configmap
+    helm install --dry-run -f $configmap
 done
 
 rm /tmp/config
